@@ -14,3 +14,4 @@ export const Legend: React.FC<LegendProps> = (props) => {
     </div>
   );
 }
+
