@@ -21,7 +21,7 @@ export const Chart: React.FC<ChartProps> = (props) => {
     const interval = setInterval(() => {
       cryptoHttp
       .get(`histominute?fsym=${coin}&tsym=BRL&limit=1`)
-      .then((response: any) => {
+      .then((response) => {
         setPrices((prevState) => {
           const price = response.data.Data[1];
           const newPrice = {
@@ -46,7 +46,7 @@ export const Chart: React.FC<ChartProps> = (props) => {
     }
     cryptoHttp
       .get(`histoday?fsym=${coin}&tsym=BRL&limit=300`)
-      .then((response: any) => {
+      .then((response) => {
         const prices = response.data.Data.map((row: any) => ({
           time: row.time,
           low: row.low,
